@@ -47,7 +47,6 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
-polkit-kde-agent
 power-profiles-daemon
 python-gpustat
 qt5-wayland
