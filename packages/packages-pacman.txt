@@ -10,7 +10,6 @@ btop
 btrfs-progs
 dkms
 dolphin
-dunst
 efibootmgr
 elephant
 elephant-desktopapplications
