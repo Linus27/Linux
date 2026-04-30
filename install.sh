@@ -144,6 +144,23 @@ setup_ssh_agent() {
   fi
 }
 
+setup_display_manager() {
+  info "Richte Display Manager (Ly) ein ..."
+
+  if systemctl is-enabled sddm.service >/dev/null 2>&1; then
+    info "Deaktiviere SDDM ..."
+    sudo systemctl disable sddm.service
+  fi
+
+  if systemctl is-enabled getty@tty2.service >/dev/null 2>&1; then
+    info "Deaktiviere getty@tty2.service ..."
+    sudo systemctl disable getty@tty2.service
+  fi
+
+  info "Aktiviere Ly auf tty2 ..."
+  sudo systemctl enable ly@tty2.service
+}
+
 main() {
   info "Starte Installation aus: $REPO_DIR"
 
@@ -152,7 +169,8 @@ main() {
   install_aur_packages
   stow_dotfiles
   setup_ssh_agent
-
+  setup_display_manager
+  
   info "Installation abgeschlossen."
 }
 

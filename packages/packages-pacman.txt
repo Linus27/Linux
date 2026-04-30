@@ -34,6 +34,7 @@ linux
 linux-firmware
 linux-headers
 loupe
+ly
 man
 nano
 neovim
@@ -53,7 +54,6 @@ python-gpustat
 qt5-wayland
 qt6-wayland
 sbctl
-sddm
 simple-scan
 slurp
 smartmontools
@@ -75,7 +75,5 @@ wiremix
 wireplumber
 xdg-desktop-portal-hyprland
 xdg-utils
-xorg-server
-xorg-xinit
 yay
 zram-generator
