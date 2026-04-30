@@ -161,6 +161,25 @@ setup_display_manager() {
   sudo systemctl enable ly@tty2.service
 }
 
+stow_system_files() {
+  info "Verlinke System-Konfigurationen (erfordert Root) ..."
+
+  if [[ ! -d "$REPO_DIR/ly" ]]; then
+    warn "Ly-Ordner nicht gefunden im Repo."
+    return
+  fi
+
+  sudo mkdir -p /etc/ly
+
+  if [[ -f "/etc/ly/config.ini" && ! -L "/etc/ly/config.ini" ]]; then
+    info "Sichere alte Ly-Config ..."
+    sudo mv /etc/ly/config.ini /etc/ly/config.ini.bak
+  fi
+
+  info "Stowe ly -> /"
+  sudo stow --dir="$REPO_DIR" --target="/" ly
+}
+
 main() {
   info "Starte Installation aus: $REPO_DIR"
 
