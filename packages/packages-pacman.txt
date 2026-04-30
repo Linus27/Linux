@@ -15,6 +15,7 @@ efibootmgr
 elephant
 elephant-desktopapplications
 elephant-websearch
+fastfetch
 firefox
 git
 gnome-disk-utility
@@ -33,6 +34,7 @@ linux
 linux-firmware
 linux-headers
 loupe
+man
 nano
 neovim
 network-manager-applet
